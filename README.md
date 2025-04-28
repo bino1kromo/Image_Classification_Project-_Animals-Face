@@ -53,16 +53,16 @@ model.compile(
 ---
 ## 📊 Hasil Evaluasi
 
-Model mencapai **akurasi keseluruhan: 99%** pada data uji, dengan performa per kelas sebagai berikut:
+Model mencapai **akurasi keseluruhan: 99.76%** pada data uji, dengan performa per kelas sebagai berikut:
 
-| Kelas       |Precision|Recall|F1-score|
-|-------------|---------|------|--------|
-| Anjing      | 0.99    | 0.99 | 0.99   |
-| Kucing      | 1.00    | 1.00 | 1.00   |
-| Margasatwa  | 0.99    | 1.00 | 0.99   |
+| Kelas       | Precision | Recall | F1-score |
+|-------------|-----------|--------|----------|
+| Anjing      | 1.0000    | 0.9964 | 0.9982   |
+| Kucing      | 1.0000    | 0.9964 | 0.9982   |
+| Margasatwa  | 0.9929    | 1.0000 | 0.9964   |
 
-- **Akurasi total**: 99%  
-- **Rata-rata F1-score**: 99%
+- **Akurasi total**: 99.76%  
+- **Rata-rata F1-score**: 99.42%
   
 ---
 ## 💡 Kesimpulan
