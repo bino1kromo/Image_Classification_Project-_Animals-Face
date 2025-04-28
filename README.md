@@ -74,5 +74,8 @@ Dengan memanfaatkan arsitektur EfficientNetV2S dan transfer learning, model ini 
 
 - Python
 - TensorFlow / Keras
-- EfficientNetV2S (pre-trained model)
+- EfficientNetV2S 
+- Sequential
+- Conv2D
+- Pooling Layer
 - Google Colab / Jupyter Notebook
