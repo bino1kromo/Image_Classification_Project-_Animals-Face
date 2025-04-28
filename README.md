@@ -29,12 +29,14 @@ from tensorflow.keras import layers, models
 base_model = EfficientNetV2S(weights="imagenet", include_top=False, input_shape=(224, 224, 3))
 base_model.trainable = True  # Fine-tune seluruh base model
 
-model = models.Sequential([
+model = Sequential([
+    Input(shape=(224, 224, 3)),
     base_model,
-    layers.GlobalAveragePooling2D(),
-    layers.Dense(256, activation="relu"),
-    layers.Dropout(0.5),
-    layers.Dense(3, activation="softmax")  # 3 kelas: Kucing, Anjing, Margasatwa
+    Conv2D(32, (3, 3), activation='relu', padding='same'),
+    MaxPooling2D(pool_size=(2, 2)),
+    GlobalAveragePooling2D(),
+    Dense(128, activation='relu'),
+    Dense(3, activation='softmax')  
 ])
 ```
 ---
@@ -51,15 +53,15 @@ model.compile(
 ---
 ## 📊 Hasil Evaluasi
 
-Model mencapai **akurasi keseluruhan: 97.57%** pada data uji, dengan performa per kelas sebagai berikut:
+Model mencapai **akurasi keseluruhan: 99%** pada data uji, dengan performa per kelas sebagai berikut:
 
 | Kelas       |Precision|Recall|F1-score|
 |-------------|---------|------|--------|
-| Anjing      | 0.97    | 0.99 | 0.98   |
+| Anjing      | 0.99    | 0.99 | 0.99   |
 | Kucing      | 1.00    | 1.00 | 1.00   |
-| Margasatwa  | 1.00    | 0.98 | 0.99   |
+| Margasatwa  | 0.99    | 1.00 | 0.99   |
 
-- **Akurasi total**: 98.837%  
+- **Akurasi total**: 99%  
 - **Rata-rata F1-score**: 99%
   
 ---
